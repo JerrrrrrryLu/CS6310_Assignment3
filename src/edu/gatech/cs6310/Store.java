@@ -3,9 +3,13 @@ package edu.gatech.cs6310;
 import java.util.Map;
 import java.util.TreeMap;
 
+import java.lang.Integer;
+
 public class Store {
     public String name;
     public Integer revenue;
+    public Integer completed_order = 0;
+    public Integer order_transferred = 0;
     public TreeMap<String, Item> item_list = new TreeMap<String, Item>();
     public TreeMap<String, Drone> drone_list = new TreeMap<String, Drone>();
     public TreeMap<String, Order> order_list = new TreeMap<String, Order>();
@@ -60,6 +64,17 @@ public class Store {
         }
     }
 
+    public void displayEfficiency(){
+        Integer total_overloads = 0;
+        for (Map.Entry<String, Drone> entry : drone_list.entrySet()) {
+            Drone d = entry.getValue();
+            total_overloads += d.capacity - d.remaining_cap;
+        }
+
+        System.out.println("name:" + name + ",purchases:" + String.valueOf(completed_order) + ",overloads:" +
+                String.valueOf(total_overloads) + ",transfers:" + String.valueOf(order_transferred) );
+    }
+
     public void requestItem(String orderID, String itemName, Integer quantity, Integer price, Customer c) {
         Item t = item_list.get(itemName);
         Order order = order_list.get(orderID);
@@ -84,7 +99,7 @@ public class Store {
         }
     }
 
-    public void complete(String orderId, Customer c) {
+    public void complete_order(String orderId, Customer c) {
 
         Order order = order_list.get(orderId);
         Drone d = drone_list.get(order.droneId);
@@ -100,6 +115,7 @@ public class Store {
                 order.total_weight = 0;
 
                 order_list.remove(orderId);
+                completed_order +=1;
                 c.order_list.remove(orderId);
                 d.order_list.remove(orderId);
 

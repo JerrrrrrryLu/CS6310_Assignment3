@@ -1,0 +1,3 @@
+49d48
+< store: kroger, order: purchaseA, drone:1
+Elapsed time: 1.192s
