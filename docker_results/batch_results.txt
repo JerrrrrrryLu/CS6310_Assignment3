@@ -1,0 +1,16 @@
+ ------ Test Case: 0 ----
+Files drone_delivery_00_results.txt and drone_delivery_initial_00_results.txt are identical
+Elapsed time: 1.241s
+ ------ Test Case: 1 ----
+Files drone_delivery_01_results.txt and drone_delivery_initial_01_results.txt are identical
+Elapsed time: 1.112s
+ ------ Test Case: 2 ----
+Files drone_delivery_02_results.txt and drone_delivery_initial_02_results.txt are identical
+Elapsed time: 1.081s
+ ------ Test Case: 3 ----
+Files drone_delivery_03_results.txt and drone_delivery_initial_03_results.txt are identical
+Elapsed time: 1.083s
+ ------ Test Case: 4 ----
+Files drone_delivery_04_results.txt and drone_delivery_initial_04_results.txt are identical
+Elapsed time: 1.059s
+ ------ Test Case: 5 ----
