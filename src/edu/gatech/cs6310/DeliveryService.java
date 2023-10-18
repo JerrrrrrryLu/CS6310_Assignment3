@@ -300,6 +300,9 @@ public class DeliveryService {
                                     d.remaining_cap += o.total_weight;
                                     d.order_list.remove(tokens[2]);
                                     o.droneId = tokens[3];
+                                    Drone d_2 = s.drone_list.get(tokens[3]);
+                                    d_2.order_list.put(tokens[2], o);
+                                    d_2.remaining_cap -= o.total_weight;
                                     s.order_transferred +=1;
                                     System.out.println("OK:change_completed");
                                 }

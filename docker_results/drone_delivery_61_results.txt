@@ -46,7 +46,6 @@ orderID:purchaseA
 OK:display_completed
 > // attempt to transfer an order from a drone to itself
 > transfer_order,kroger,purchaseA,1
-store: kroger, order: purchaseA, drone:1
 OK:new_drone_is_current_drone_no_change
 > display_efficiency
 name:kroger,purchases:0,overloads:0,transfers:0
